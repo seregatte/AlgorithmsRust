@@ -1,0 +1,23 @@
+language: bash
+
+os:
+- linux
+
+env:
+  - RUSTVER=
+  - RUSTVER=1.45.2
+  - RUSTVER=1.42
+
+services:
+  - docker
+
+script:
+- |
+  if [[ "$TRAVIS_OS_NAME" == 'linux' && -n "$RUSTVER" ]]; then
+    printf "FROM rust:${RUSTVER}-alpine\nRUN apk add --update make\nWORKDIR /code\nENTRYPOINT []\nCMD [\"make\"]" > Dockerfile
+    docker build --tag tester:${RUSTVER}-alpine .
+    docker run -it -v `pwd`:/code tester:${RUSTVER}-alpine
+  fi
+notifications:
+  email:
+    on_success: never
