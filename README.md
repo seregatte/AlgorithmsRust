@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/seregatte/AlgorithmsRust/master/README.md# AlgorithmsRust [![Build Status](https://travis-ci.org/seregatte/AlgorithmsRust.svg?branch=master)](https://travis-ci.org/seregatte/AlgorithmsRust)
+# AlgorithmsRust [![Build Status](https://travis-ci.org/seregatte/AlgorithmsRust.svg?branch=master)](https://travis-ci.org/seregatte/AlgorithmsRust)
 
 Some Algorithms written in Rust for language studies (PR are welcome)
 
