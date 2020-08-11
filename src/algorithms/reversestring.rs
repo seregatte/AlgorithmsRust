@@ -3,9 +3,10 @@
 // }
 
 pub fn reverse(s: &str) -> String {
-    let mut reversed = String::from("");
-    s.chars().for_each(|c| reversed.insert(0 , c) );
-    reversed
+    s.chars().fold("".to_string(), |mut reversed, c| {
+        reversed.insert(0 , c);
+        reversed
+    })
 }
 
 #[cfg(test)]
